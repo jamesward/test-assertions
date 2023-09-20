@@ -1,7 +1,7 @@
 import zio.test.*
 import zio.test.Assertion.*
 
-object MySpec extends ZIOSpecDefault:
+object ZIOSpec extends ZIOSpecDefault:
   def spec = suite("My")(
     test("stuff") {
       case class Role(title: String)
@@ -31,6 +31,11 @@ object MySpec extends ZIOSpecDefault:
       //
       assert(rightSomeTwo)(isRight(isSome(equalTo(2)))) &&
       // vs
-      assertTrue(rightSomeTwo.exists(_.contains(2)))
+      assertTrue(rightSomeTwo.exists(_.contains(2))) &&
+      //
+      //
+      assert(people.find(_.name == "Ralph"))(isSome(hasField("title", _.role.title, equalsIgnoreCase("qa")))) &&
+      // vs
+      assertTrue(people.find(_.name == "Ralph").get.role.title.equalsIgnoreCase("qa"))
     }
   )
