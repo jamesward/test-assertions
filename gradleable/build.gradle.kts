@@ -24,5 +24,5 @@ tasks.withType<Test> {
 }
 
 configure<com.bnorm.power.PowerAssertGradleExtension> {
-    functions = listOf("assertTrue")
+    functions = listOf("kotlin.assert", "assertTrue")
 }

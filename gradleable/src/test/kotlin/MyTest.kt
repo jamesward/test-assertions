@@ -13,6 +13,11 @@ class MyTest {
 
     @Test
     fun one() {
+        assert("Bob".startsWith("B") && "Bob".endsWith("c"))
+    }
+
+    @Test
+    fun two() {
         data class Role(val title: String)
         data class Person(val name: String, val role: Role)
         val people = listOf(

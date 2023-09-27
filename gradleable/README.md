@@ -1,1 +1,5 @@
 # Test Kotlin
+
+```
+./gradlew test
+```
