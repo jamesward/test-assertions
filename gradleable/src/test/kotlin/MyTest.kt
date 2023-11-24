@@ -1,14 +1,5 @@
 import kotlin.test.Test
 
-fun assertTrue(value: Boolean?, message: String = "value was null") {
-    if (value != null) {
-        assert(value) { message }
-    }
-    else {
-        throw AssertionError(message)
-    }
-}
-
 class MyTest {
 
     @Test
@@ -26,7 +17,7 @@ class MyTest {
                 Person("Bob", Role("QA")),
         )
 
-        assertTrue(people.find { it.name == "Ralph" }?.role?.title == "qa")
+        assert(people.find { it.name == "Ralph" }?.role?.title.equals("qa"))
     }
 
 }

@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.9.10"
+    kotlin("jvm") version "1.9.21"
     id("com.bnorm.power.kotlin-power-assert") version "0.13.0"
 }
 
@@ -24,5 +24,5 @@ tasks.withType<Test> {
 }
 
 configure<com.bnorm.power.PowerAssertGradleExtension> {
-    functions = listOf("kotlin.assert", "assertTrue")
+    functions = listOf("kotlin.assert")
 }
