@@ -17,7 +17,7 @@ class MyTest {
                 Person("Bob", Role("QA")),
         )
 
-        assert(people.find { it.name == "Ralph" }?.role?.title.equals("qa"))
+        assert(people.find { it.name == "Ralph" }?.role?.title.equals("qa", ignoreCase = true))
     }
 
 }

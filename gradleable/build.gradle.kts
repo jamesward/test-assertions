@@ -22,7 +22,3 @@ tasks.withType<Test> {
         events(org.gradle.api.tasks.testing.logging.TestLogEvent.STARTED, org.gradle.api.tasks.testing.logging.TestLogEvent.PASSED, org.gradle.api.tasks.testing.logging.TestLogEvent.SKIPPED, org.gradle.api.tasks.testing.logging.TestLogEvent.FAILED)
     }
 }
-
-configure<com.bnorm.power.PowerAssertGradleExtension> {
-    functions = listOf("kotlin.assert")
-}
